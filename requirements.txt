@@ -1,1 +1,10 @@
-arcade==2.6.6
+arcade=3.3.3
+attrs=26.1.0
+cff=2.0.0
+pillow=11.3.0
+pip=26.1.1
+pycparser=3.0
+pyglet=2.1.14
+pymunk=6.9.0
+pytiled_parser=2.2.
+typing_extensions=4.15.0
