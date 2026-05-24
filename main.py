@@ -1167,11 +1167,11 @@ class DungeonRogue(arcade.Window):
         elif self.tutorial_page == TutorialPage.ENEMIES:
             enemies_info = [("Заяц", arcade.color.LIGHT_GRAY, "Слабый, но быстрый.", 'hare'),
                             ("Волколак", arcade.color.LIGHT_GREEN, "Сильный воин.", 'wolf'),
-                            ("Медведь", arcade.color.LIGHT_SKY_BLUE, "Огромный зверь. Очень опасен!.", 'bear'),
+                            ("Медведь", arcade.color.LIGHT_SKY_BLUE, "Огромный зверь. Давит массой.", 'bear'),
                             ("Лиса", arcade.color.ORANGE, "Магический зверь. Ментальные атаки.", 'fox'),
                             ("Скелет", arcade.color.GRAY, "Обычная нежить со средними характеристиками.", 'skeleton'),
                             ("Тыква", arcade.color.LIGHT_BROWN, "Очень медленный враг, но живучий.", 'punk'),
-                            ("Щука", arcade.color.DARK_RED, "Элитный враг.", 'fish')]
+                            ("Щука", arcade.color.DARK_RED, "Элитный враг. Очень опасен!", 'fish')]
             for i, (name, color, desc, tex_name) in enumerate(enemies_info):
                 y = content_y - i * 55
                 if self.textures.has(tex_name):
@@ -1180,13 +1180,13 @@ class DungeonRogue(arcade.Window):
                 arcade.draw_text(desc, left + 120, y - 12, arcade.color.LIGHT_GRAY, 13)
         
         elif self.tutorial_page == TutorialPage.ITEMS:
-            items_info = [("Зелье здоровья", arcade.color.LIGHT_CORAL, "Восстанавливает ОЗ.", 'health_potion'),
+            items_info = [("Зелье здоровья", arcade.color.LIGHT_CORAL, "Восстанавливает здоровье.", 'health_potion'),
                           ("Зелье маны", arcade.color.LIGHT_SKY_BLUE, "Восстанавливает ману.", 'mana_potion'),
-                          ("Золото", arcade.color.GOLD, "Валюта.", 'gold'),
+                          ("Золото", arcade.color.GOLD, "Универсальная валюта (пока ничего нельзя купить).", 'gold'),
                           ("Меч", arcade.color.SILVER, "Увеличивает урон.", 'sword'),
                           ("Щит", arcade.color.LIGHT_GRAY, "Увеличивает защиту.", 'shield'),
-                          ("Свиток огня", arcade.color.ORANGE, "Урон всем видимым врагам!", 'scroll_fireball'),
-                          ("Свиток телепорта", arcade.color.CYAN, "Перемещает в случайную комнату.", 'scroll_teleport')]
+                          ("Свиток огня", arcade.color.ORANGE, "Применение наносит урон всем видимым врагам!", 'scroll_fireball'),
+                          ("Свиток телепорта", arcade.color.CYAN, "Перемещает героя в случайную комнату.", 'scroll_teleport')]
             for i, (name, color, desc, tex_name) in enumerate(items_info):
                 y = content_y - i * 52
                 if self.textures.has(tex_name):
@@ -1195,13 +1195,13 @@ class DungeonRogue(arcade.Window):
                 arcade.draw_text(desc, left + 120, y - 12, arcade.color.LIGHT_GRAY, 12)
         
         elif self.tutorial_page == TutorialPage.LORE:
-            lore_text = ["Давным-давно на Руси жили-были Дед-колдун да Бабка-ведьма.",
-                         "Как-то раз для кроваго ритуала испекли они Колобка", "и положили его остудить в холодное подземелье.", "",
-                         "Но не стал Колобок безропотной жертвой", "Вооружённый лишь своими навыками и отвагой,",
+            lore_text = ["Очень давно жили на Руси Дед-Колдун да Бабка-Ведьма.",
+                         "Как-то раз испекли они Колобка для чёрного, кровавого ритуала", "и положили его остудить в мрачное, холодное подземелье...", "",
+                         "Но не стал Колобок безропотной жертвой.", "Вооружённый лишь своими навыками и отвагой,",
                          "смело отправился он исследовать зловещий подземный лабиринт...",
-                         "Колобка ждут несметные богатства и могущественные артефакты", "забытой эпохи. Но также и невыразимые ужасы -",
-                         "существа тьмы, питающиеся душами храбрецов...", "",
-                        "Да пребудет с вами удача. Ваше путешествие начинается..."]
+                         "Колобка ждут не только несметные богатства и могущественные артефакты", ""
+                         "но и враги, питающиеся душами храбрецов...", "",
+                        "Да пребудет с вами удача и сила! Путешествие начинается..."]
             for i, line in enumerate(lore_text):
                 y = content_y - i * 26
                 color = arcade.color.GOLD if i == 0 or i == len(lore_text) - 1 else arcade.color.LIGHT_GRAY
